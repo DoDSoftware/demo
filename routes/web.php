@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('api/countries/{id?}', 'Api\PlacesApiController@countries')->name('countries');
+Route::get('api/states/{id?}', 'Api\PlacesApiController@states')->name('states');
+Route::get('api/cities/{id?}', 'Api\PlacesApiController@cities')->name('cites');
