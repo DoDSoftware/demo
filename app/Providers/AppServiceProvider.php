@@ -24,5 +24,14 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         // register the services that are only used for development
+
+        /**
+         * Backpack Class Overrides
+         * Reads as: instead of class X, use class Y
+         */
+        $this->app->bind(
+            \Backpack\NewsCRUD\app\Http\Controllers\Admin\ArticleCrudController::class,
+            \App\Http\Controllers\Admin\ArticleCrudController::class
+        );
     }
 }
